@@ -14,8 +14,9 @@
 ### 기술스택
 + Unity (C#)
 ### 간단한 소개
+UI 구상도
+
 <img width="1202" alt="스크린샷 2024-10-01 오후 4 29 59" src="https://github.com/user-attachments/assets/0f8c59ea-5875-4c67-8733-72a063c8334c">
-> UI 구상도
 
 * 기존 Survivors-Like 장르와 유사하게 15분 생존 후 보스 몬스터 처치가 목표
 * 플레이어블 캐릭터를 분야별 개발자로 설정 (게임, 웹, AI)
