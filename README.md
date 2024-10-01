@@ -11,18 +11,19 @@
 
 ## 📏 개발환경 (기술스택 & 간단한 소개)
 ### 기술스택
-+ Unity (C#)
+Unity (C#)
 ### 간단한 소개
 UI 구상도
 
 <img width="1202" alt="스크린샷 2024-10-01 오후 4 29 59" src="https://github.com/user-attachments/assets/0f8c59ea-5875-4c67-8733-72a063c8334c">
-* 사운드, 그래픽 제외 전부 Unity로 구현
+
+사운드, 그래픽 제외 전부 Unity로 구현
 
 ## ⚙ 시스템 구성도
 ![image](https://github.com/user-attachments/assets/1e669171-d521-45c3-8c56-9b9884f9933c)
 
 ## 🧰 구현기술
-* 세이브파일은 로컬 저장소와 연동(.JSON)
+세이브파일은 로컬 저장소와 연동(.JSON)
 
 ## 💻 구현결과
 * 추후 업데이트
