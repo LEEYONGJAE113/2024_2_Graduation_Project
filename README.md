@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/3df1c478-298e-45d3-8941-6630a928cc25)# 2024_2_Graduation_Project
 2024학년도 2학기 졸업프로젝트 내용입니다.
 
 ## 🎮 프로젝트 명
