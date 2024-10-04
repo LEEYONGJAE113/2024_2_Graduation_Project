@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Moving();
     }
@@ -24,21 +24,16 @@ public class PlayerMove : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal"); // 가로
         float verticalInput = Input.GetAxisRaw("Vertical"); // 세로
 
-        Vector3 moveTo = new Vector3(horizontalInput, verticalInput, 0f);
+        Vector2 moveTo = new Vector2(horizontalInput, verticalInput);
 
-        if(moveTo != Vector3.zero)
+        if(moveTo != Vector2.zero)
         {
             moveTo.Normalize();
         }
 
-        transform.position += moveTo * moveSpeed * Time.deltaTime;
+        // transform.position += moveTo * moveSpeed * Time.deltaTime;
+        rb.MovePosition(rb.position + moveTo * moveSpeed * Time.deltaTime);
     }
 
-    // void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.CompareTag("Wall"))
-    //     {
-    //         transform.position = Vector3.zero;
-    //     }
-    // }
+    
 }
