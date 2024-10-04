@@ -8,7 +8,7 @@ public class EnemyMove : MonoBehaviour
     public float enemyMoveSpeed = 5f;
     
     public Transform player;
-    public float stoppingDistance = 1.5f;
+
 
     private Rigidbody2D rb;
 
@@ -24,10 +24,7 @@ public class EnemyMove : MonoBehaviour
             Vector3 direction = (player.position - transform.position).normalized;
             float distance = Vector3.Distance(transform.position, player.position);
 
-            if (distance > stoppingDistance)
-            {
-                rb.MovePosition(transform.position + direction * enemyMoveSpeed * Time.fixedDeltaTime);
-            }
+            rb.MovePosition(transform.position + direction * enemyMoveSpeed * Time.fixedDeltaTime);
         }
     }
 }
