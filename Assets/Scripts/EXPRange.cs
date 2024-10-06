@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class EXPRange : MonoBehaviour
 {
-    void Start()
+    [SerializeField]
+    private GameObject player;
+    void Update()
     {
-
+        FollowPlayer();
     }
 
+    void FollowPlayer()
+    {
+        if (player != null)
+        {
+            transform.position = player.transform.position;
+        }
+    }
     
 }
