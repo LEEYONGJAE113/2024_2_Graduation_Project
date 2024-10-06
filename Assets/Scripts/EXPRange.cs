@@ -5,7 +5,7 @@ using UnityEngine;
 public class EXPRange : MonoBehaviour
 {
     [SerializeField]
-    private GameObject player;
+    private GameObject _player;
     void Update()
     {
         FollowPlayer();
@@ -13,9 +13,9 @@ public class EXPRange : MonoBehaviour
 
     void FollowPlayer()
     {
-        if (player != null)
+        if (_player != null)
         {
-            transform.position = player.transform.position;
+            transform.position = _player.transform.position;
         }
     }
     

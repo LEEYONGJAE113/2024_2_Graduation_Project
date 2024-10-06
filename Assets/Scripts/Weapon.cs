@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public float damage = 1f;
+    [SerializeField]
+    private float _damage = 1f;
+
+    public float Damage { get; private set; }
     void Start()
     {
         
@@ -13,5 +16,9 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         
+    }
+    private void Awake()
+    {
+        Damage = _damage; // 초기화
     }
 }

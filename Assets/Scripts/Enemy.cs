@@ -6,10 +6,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
-    private GameObject expMarble;
-    private float hp = 1f;
+    private GameObject _expMarble;
 
-    // Update is called once per frame
+    [SerializeField]
+    private float _hp = 1f;
+
     void Update()
     {
 
@@ -19,11 +20,11 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag == "Weapon")
         {
             Weapon weapon = other.gameObject.GetComponent<Weapon>();
-            hp -= weapon.damage;
-            if(hp <= 0)
+            _hp -= weapon.Damage;
+            if(_hp <= 0)
             {
                 Destroy(gameObject);
-                Instantiate(expMarble, transform.position, Quaternion.identity);
+                Instantiate(_expMarble, transform.position, Quaternion.identity);
             }
         }
     }

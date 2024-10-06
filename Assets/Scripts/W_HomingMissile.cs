@@ -5,18 +5,18 @@ using UnityEngine;
 public class W_HomingMissile : Weapon
 {
     [SerializeField]
-    public float HomingMissileMoveSpeed = 10f;
+    private float _MoveSpeed = 10f;
     [SerializeField]
-    public float rotationSpeed = 200f;
+    private float _rotationSpeed = 200f;
 
-    private Vector3 moveDirection;
-    private Rigidbody2D rb;
-    private Transform target;
+    private Vector3 _moveDirection;
+    private Rigidbody2D _rb;
+    private Transform _target;
 
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, 10f);
         FindTarget();
         InitializeDirection();
@@ -24,20 +24,20 @@ public class W_HomingMissile : Weapon
 
     void Update()
     {
-        transform.Translate(moveDirection * HomingMissileMoveSpeed * Time.deltaTime, Space.World);
+        transform.Translate(_moveDirection * _MoveSpeed * Time.deltaTime, Space.World);
     }
 
     void InitializeDirection()
     {
-        if (target != null)
+        if (_target != null)
         {
-            Vector3 direction = target.position - transform.position;
+            Vector3 direction = _target.position - transform.position;
             direction.Normalize();
-            moveDirection = direction;
+            _moveDirection = direction;
         }
         else
         {
-            moveDirection = Vector3.right;
+            _moveDirection = Vector3.right;
         }
     }
 
@@ -63,7 +63,7 @@ public class W_HomingMissile : Weapon
 
         if (closestEnemy != null)
         {
-            target = closestEnemy.transform;
+            _target = closestEnemy.transform;
         }
     }
 }

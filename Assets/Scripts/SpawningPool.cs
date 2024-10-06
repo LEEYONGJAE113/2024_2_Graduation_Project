@@ -5,10 +5,10 @@ using UnityEngine;
 public class SpawningPool : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] enemies;
+    private GameObject[] _enemies;
 
     [SerializeField]
-    private float spawnInterval = 5f;
+    private float _spawnInterval = 5f;
     void Start()
     {
         StartCoroutine(SpawnEnemies());
@@ -23,8 +23,8 @@ public class SpawningPool : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(enemies[0], transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(spawnInterval);
+            Instantiate(_enemies[0], transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(_spawnInterval);
         }
     }
 

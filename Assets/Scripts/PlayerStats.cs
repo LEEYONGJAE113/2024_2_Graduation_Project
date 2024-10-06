@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public float playerHP;
-    private float playerEXP = 0f;
-    private int playerLevel = 1;
+    [SerializeField]
+    private float _playerHP;
+    private float _playerEXP = 0f;
+    private int _playerLevel = 1;
     void Start()
     {
         
@@ -24,7 +25,7 @@ public class PlayerStats : MonoBehaviour
         {
             EXPMarble expmarble = other.gameObject.GetComponent<EXPMarble>();
             Destroy(other.gameObject);
-            playerEXP += expmarble.marbleEXP;
+            _playerEXP += expmarble.Exp;
         }
     }
 }

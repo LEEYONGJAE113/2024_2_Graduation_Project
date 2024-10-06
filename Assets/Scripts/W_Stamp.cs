@@ -5,11 +5,11 @@ using UnityEngine;
 public class W_Stamp : Weapon
 {
     [SerializeField]
-    public float stampRangeX = 8f;
+    private float _rangeX = 8f;
     [SerializeField]
-    public float stampRangeY = 4.5f;
+    private float _rangeY = 4.5f;
     [SerializeField]
-    public float stampRadius = 1f;
+    private float _radius = 1f;
     void Start()
     {
         

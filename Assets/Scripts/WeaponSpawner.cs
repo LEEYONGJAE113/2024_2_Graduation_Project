@@ -5,10 +5,10 @@ using UnityEngine;
 public class WeaponSpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] weapons;
+    private GameObject[] _weapons;
 
     [SerializeField]
-    private float spawnInterval = 5f;
+    private float _spawnInterval = 5f;
 
     void Start()
     {
@@ -25,8 +25,8 @@ public class WeaponSpawner : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(weapons[0], transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(spawnInterval);
+            Instantiate(_weapons[0], transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(_spawnInterval);
         }
     }
 }

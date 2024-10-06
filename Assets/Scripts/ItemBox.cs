@@ -5,8 +5,7 @@ using UnityEngine;
 public class ItemBox : MonoBehaviour
 {
     [SerializeField]
-
-    private GameObject[] items;
+    private GameObject[] _items;
     void Start()
     {
         
@@ -22,7 +21,7 @@ public class ItemBox : MonoBehaviour
         if (other.gameObject.tag == "Weapon")
         {
             Destroy(gameObject);
-            // Instantiate(items[index], transform.position, Quaternion.identity);
+            // Instantiate(_items[index], transform.position, Quaternion.identity);
         }
     }
 }   

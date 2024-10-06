@@ -5,25 +5,25 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     [SerializeField]
-    public float enemyMoveSpeed = 5f;
+    private float _MoveSpeed = 5f;
     
-    private Transform player;
-    private Rigidbody2D rb;
+    private Transform _player;
+    private Rigidbody2D _rb;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        _rb = GetComponent<Rigidbody2D>();
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void FixedUpdate()
     {
-        if (player != null)
+        if (_player != null)
         {
-            Vector3 direction = (player.position - transform.position).normalized;
+            Vector3 direction = (_player.position - transform.position).normalized;
             // float distance = Vector3.Distance(transform.position, player.position);
 
-            rb.MovePosition(transform.position + direction * enemyMoveSpeed * Time.fixedDeltaTime);
+            _rb.MovePosition(transform.position + direction * _MoveSpeed * Time.fixedDeltaTime);
         }
     }
 }
