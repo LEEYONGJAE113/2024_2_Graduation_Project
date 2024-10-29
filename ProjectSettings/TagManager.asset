@@ -9,6 +9,8 @@ TagManager:
   - EXPRange
   - Wall
   - Weapon
+  - ViewArea
+  - Background
   layers:
   - Default
   - TransparentFX
@@ -16,9 +18,9 @@ TagManager:
   - 
   - Water
   - UI
-  - Wall
-  - Player
-  - Enemy
+  - 
+  - 
+  - 
   - 
   - 
   - 
