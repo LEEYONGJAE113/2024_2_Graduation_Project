@@ -18,18 +18,21 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private Rigidbody2D _player;
     
+    private Animator _anim;
     private Collider2D _coll;
     private Rigidbody2D _rb;
+    private SpriteRenderer _spriter;
     private WaitForFixedUpdate _wait;
 
     // private GameObject[] _expMarbles;
     private GameObject _expMarble;
 
-
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _coll = GetComponent<Collider2D>();
+        _anim = GetComponent<Animator>();
+        _spriter = GetComponent<SpriteRenderer>();
         _wait = new WaitForFixedUpdate();
     }
 
@@ -39,16 +42,23 @@ public class Enemy : MonoBehaviour
         _isLive = true;
         _coll.enabled = true;
         _rb.simulated = true;
+        _spriter.sortingOrder = 2;
         _currentHp = _maxHp;
     }
 
     void FixedUpdate()
     {
-        if (!_isLive) { return; }
+        if (!_isLive || _anim.GetCurrentAnimatorStateInfo(0).IsName("Hit")) { return; }
         Vector2 dir = _player.position - _rb.position;
         Vector2 nextVec = dir.normalized * _moveSpeed * Time.fixedDeltaTime;
         _rb.MovePosition(_rb.position + nextVec);
         _rb.velocity = Vector2.zero;
+    }
+
+    void LateUpdate()
+    {
+        if (!_isLive) { return; }
+        _spriter.flipX = (_player.position.x < _rb.position.x);
     }
 
     public void Init()
@@ -68,7 +78,7 @@ public class Enemy : MonoBehaviour
 
         if ( _currentHp > 0 )
         {
-            //alive
+            _anim.SetTrigger("Hit");
         }
         else
         {
@@ -83,15 +93,16 @@ public class Enemy : MonoBehaviour
         _isLive = false;
         _coll.enabled = false;
         _rb.simulated = false;
+        _spriter.sortingOrder = 1;
         gameObject.SetActive(false);
     }
 
     IEnumerator Knockback()
     {
-        yield return _wait;
+        yield return new WaitForFixedUpdate();
         if (!_isLive) { yield break; }
         Vector3 dir = transform.position - _player.transform.position;
-        _rb.AddForce(dir.normalized * 3, ForceMode2D.Impulse);
+        _rb.AddForce(dir.normalized * 3f, ForceMode2D.Impulse);
     }
 
     // void DropExp()

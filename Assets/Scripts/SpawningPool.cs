@@ -8,7 +8,7 @@ public class SpawningPool : MonoBehaviour
     [SerializeField]
     private GameObject[] _enemies;
     [SerializeField]
-    private Transform[] _spawnPoint;
+    private Transform[] _spawnPoints;
 
     [SerializeField]
     private float _spawnInterval = 5f;
@@ -17,7 +17,7 @@ public class SpawningPool : MonoBehaviour
 
     void Awake()
     {
-        _spawnPoint = GetComponentsInChildren<Transform>();
+        _spawnPoints = GetComponentsInChildren<Transform>();
     }
 
     void Update()
@@ -33,9 +33,9 @@ public class SpawningPool : MonoBehaviour
 
     void Spawn()
     {
-        Instantiate(_enemies[0]);
-        _enemies[0].transform.position = _spawnPoint[0].position;
-        _enemies[0].GetComponent<Enemy>().Init(); 
+        GameObject enemy = GameManager.instance.pool.Get(0);
+        enemy.transform.position = _spawnPoints[Random.Range(1, _spawnPoints.Length)].position;
+        enemy.GetComponent<Enemy>().Init();
     }
 
 }
