@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public float playerEXP;
     public int playerLevel;
     public float playerMoveSpeed;
+    public int kill;
     void Awake()
     {
         instance = this;

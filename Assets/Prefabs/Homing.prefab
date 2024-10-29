@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2751377815621659155}
   - component: {fileID: 8019143169411706815}
-  - component: {fileID: 9217332758368920274}
   - component: {fileID: 4975429202520173686}
   - component: {fileID: 489399674976378960}
+  - component: {fileID: 9217332758368920274}
   m_Layer: 0
   m_Name: Homing
   m_TagString: Weapon
@@ -87,21 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9217332758368920274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2186999626502941668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773860c2f526f48baba2fb22def29dbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1
-  _MoveSpeed: 10
-  _rotationSpeed: 200
 --- !u!50 &4975429202520173686
 Rigidbody2D:
   serializedVersion: 4
@@ -174,3 +159,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.8828125}
   m_EdgeRadius: 0
+--- !u!114 &9217332758368920274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2186999626502941668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773860c2f526f48baba2fb22def29dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0.1
+  _MoveSpeed: 10
+  _rotationSpeed: 200

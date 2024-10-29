@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     {
         Vector2 nextVec = _inputVec * GameManager.instance.playerMoveSpeed * Time.fixedDeltaTime;
         _rb.MovePosition(_rb.position + nextVec);
+        _rb.velocity = Vector2.zero;
     }
 
     void OnMove(InputValue inputValue)

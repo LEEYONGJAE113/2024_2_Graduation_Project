@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5518301313782680113}
   - component: {fileID: 6138697289619785795}
-  - component: {fileID: 5224553124352592705}
   - component: {fileID: 7068584669319485086}
-  - component: {fileID: 393822296209349414}
   - component: {fileID: 1248147413556052071}
+  - component: {fileID: 5224553124352592705}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8047690371064292641}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: -3.81, y: 0.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -88,20 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5224553124352592705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8047690371064292641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42fc52195f3424fca9aace68114bc0a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _expMarble: {fileID: 6562027834226550129, guid: 31f1031476e98f049ac4dceb9d819dc3, type: 3}
-  _hp: 1
 --- !u!50 &7068584669319485086
 Rigidbody2D:
   serializedVersion: 4
@@ -129,19 +114,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &393822296209349414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8047690371064292641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5123edd138aab4133a2f6265e33e98f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _MoveSpeed: 5
 --- !u!61 &1248147413556052071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,3 +159,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5224553124352592705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8047690371064292641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fc52195f3424fca9aace68114bc0a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentHp: 5
+  _maxHp: 5
+  _moveSpeed: 3
+  _player: {fileID: 0}

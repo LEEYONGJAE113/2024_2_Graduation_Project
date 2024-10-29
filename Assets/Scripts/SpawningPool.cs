@@ -1,31 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class SpawningPool : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] _enemies;
+    [SerializeField]
+    private Transform[] _spawnPoint;
 
     [SerializeField]
     private float _spawnInterval = 5f;
-    void Start()
+
+    private float timer;
+
+    void Awake()
     {
-        StartCoroutine(SpawnEnemies());
+        _spawnPoint = GetComponentsInChildren<Transform>();
     }
 
     void Update()
     {
-        
+        timer += Time.deltaTime;
+
+        if (timer > _spawnInterval)
+        {
+            timer = 0;
+            Spawn();
+        }
     }
 
-    IEnumerator SpawnEnemies()
+    void Spawn()
     {
-        while (true)
-        {
-            Instantiate(_enemies[0], transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(_spawnInterval);
-        }
+        Instantiate(_enemies[0]);
+        _enemies[0].transform.position = _spawnPoint[0].position;
+        _enemies[0].GetComponent<Enemy>().Init(); 
     }
 
 }
