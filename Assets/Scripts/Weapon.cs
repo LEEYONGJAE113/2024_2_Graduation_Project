@@ -3,31 +3,33 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class WeaponManager : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
-    public int id;
-    public int prefabsId;
+    [SerializeField]
+    private int _id;
+    [SerializeField]
+    private int _prefabsId;
     public float damage;
 
-    public Player player;
+    private Player _player;
 
 
     void Awake()
     {
-        player = GameManager.instance.player;
+        _player = GameManager.instance.player;
     }
 
     public void Init()
     {
-        transform.parent = player.transform;
+        transform.parent = _player.transform;
         transform.localPosition = Vector3.zero;
     }
 
     void FireBullet()
     {
-        if (!player.scanner.nearestTarget) { return; }
+        if (!_player.scanner.nearestTarget) { return; }
 
-        Vector3 targetPos = player.scanner.nearestTarget.position;
+        Vector3 targetPos = _player.scanner.nearestTarget.position;
         Vector3 dir = targetPos - transform.position;
         dir = dir.normalized;
 
