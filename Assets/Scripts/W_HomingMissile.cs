@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class W_HomingMissile : Weapon
+public class W_HomingMissile : MonoBehaviour
 {
     [SerializeField]
     private float _MoveSpeed = 10f;
     [SerializeField]
     private float _rotationSpeed = 200f;
+    public float damage;
 
     private Vector3 _moveDirection;
     private Rigidbody2D _rb;
     private Transform _target;
 
 
-    void Start()
+    void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, 10f);

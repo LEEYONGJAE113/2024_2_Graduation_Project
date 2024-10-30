@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class W_Stamp : Weapon
+public class W_Stamp : MonoBehaviour
 {
     [SerializeField]
     private float _rangeX = 8f;
