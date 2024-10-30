@@ -18662,10 +18662,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca32ea4be16624ee89a92ae8d75290b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scanRange: 0
+  _scanRange: 5
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   nearestTarget: {fileID: 0}
 --- !u!1 &1616446027
 GameObject:
