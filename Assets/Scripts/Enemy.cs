@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour
     {
         if (!collision.CompareTag("Weapon") || !_isLive) { return; }
 
-        _currentHp -= collision.GetComponent<Weapon>().damage;
+        _currentHp -= collision.GetComponent<WeaponManager>().damage;
         StartCoroutine(Knockback());
 
         if ( _currentHp > 0 )

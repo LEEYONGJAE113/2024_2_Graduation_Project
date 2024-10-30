@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class W_HomingMissile : Weapon
+public class W_HomingMissile : MonoBehaviour
 {
     [SerializeField]
     private float _MoveSpeed = 10f;

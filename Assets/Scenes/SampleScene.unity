@@ -17994,8 +17994,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1373863547}
-  - component: {fileID: 1373863548}
-  - component: {fileID: 1373863549}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -18018,34 +18016,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1373863548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373863546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773860c2f526f48baba2fb22def29dbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  _MoveSpeed: 10
-  _rotationSpeed: 200
---- !u!114 &1373863549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373863546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3389ccb7c7c9a4e15a3b8e387e95a379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
 --- !u!1 &1384547460
 GameObject:
   m_ObjectHideFlags: 0
@@ -18489,6 +18459,7 @@ GameObject:
   - component: {fileID: 1607219423}
   - component: {fileID: 1607219422}
   - component: {fileID: 1607219421}
+  - component: {fileID: 1607219426}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -18679,6 +18650,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1607219426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607219413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca32ea4be16624ee89a92ae8d75290b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1616446027
 GameObject:
   m_ObjectHideFlags: 0
