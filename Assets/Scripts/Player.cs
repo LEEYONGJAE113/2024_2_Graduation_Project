@@ -7,9 +7,11 @@ public class Player : MonoBehaviour
 {
     private Vector2 _inputVec;
     private Rigidbody2D _rb;
+    public Scanner scanner;
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        scanner = GetComponent<Scanner>();
     }
 
     void FixedUpdate()
