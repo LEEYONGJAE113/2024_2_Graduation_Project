@@ -19067,6 +19067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1988709583}
   - component: {fileID: 1988709584}
+  - component: {fileID: 1988709587}
   - component: {fileID: 1988709585}
   - component: {fileID: 1988709586}
   m_Layer: 0
@@ -19190,10 +19191,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3389ccb7c7c9a4e15a3b8e387e95a379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  prefabsId: 0
+  _id: 0
+  _prefabsId: 0
+  _count: 0
+  _cooldown: 0
   damage: 50
-  player: {fileID: 1607219421}
+--- !u!50 &1988709587
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988709582}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2014695566
 GameObject:
   m_ObjectHideFlags: 0
