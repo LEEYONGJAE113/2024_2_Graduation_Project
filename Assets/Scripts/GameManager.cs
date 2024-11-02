@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public int playerLevel;
     public float playerMoveSpeed;
     public int kill;
-
     
 
     void Awake()

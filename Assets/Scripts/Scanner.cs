@@ -39,6 +39,6 @@ public class Scanner : MonoBehaviour
             }
         }
 
-        return transform;
+        return result;
     }
 }

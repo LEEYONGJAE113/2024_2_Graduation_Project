@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb66592cce6924ee8a92390893e28f95, type: 3}
+  m_Name: Weapon 0
+  m_EditorClassIdentifier: 
+  weaponType: 0
+  weaponId: 0
+  weaponName: "\uCD1D\uC54C"
+  weaponIcon: {fileID: 0}
+  weaponDesc: 
+  projectile: {fileID: 1236078097168761548, guid: ec9a809f30395aa4ebfb57b9e2a551e5, type: 3}
+  baseDamage: 3
+  cooldown: 0
+  baseCount: 0
+  damages:
+  - 0.35
+  - 0.7
+  - 1.1
+  - 1.5
+  - 2
+  cooldowns:
+  - 0.6
+  - 0.55
+  - 0.5
+  - 0.45
+  - 0.4
+  counts: 0100000001000000010000000200000002000000

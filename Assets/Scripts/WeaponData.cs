@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Weapons", menuName = "Scriptable Object/WeaponData")]
+[CreateAssetMenu(fileName = "Weapon", menuName = "Scriptable Object/WeaponData")]
 public class WeaponData : ScriptableObject
 {
     public enum WeaponType { Bullet }
@@ -11,15 +11,16 @@ public class WeaponData : ScriptableObject
     public WeaponType weaponType;
     public int weaponId;
     public string weaponName;
-    public GameObject projectile; // for prefabs
-
+    public Sprite weaponIcon;
     [TextArea]
     public string weaponDesc;
-    public Sprite weaponIcon;
-
+    public GameObject projectile; // for prefabs
     [Header("# Level Data")]
     public float baseDamage;
+    public float baseCooldown;
     public int baseCount;
+
     public float[] damages;
+    public float[] cooldowns;
     public int[] counts;
 }

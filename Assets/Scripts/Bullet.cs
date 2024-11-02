@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField]
-    private float _damage;
+    public float damage;
     [SerializeField]
     private int _penetr;
-    [SerializeField]
+
+    private float _fast;
 
     private Rigidbody2D _rb;
 
@@ -19,12 +19,13 @@ public class Bullet : MonoBehaviour
 
     public void Init(float damage, int penetr, Vector3 dir)
     {
-        this._damage = damage;
-        this._penetr = penetr;
+        this.damage = damage;
+        _penetr = penetr;
+        _fast = 15f;
 
         if ( _penetr >= 0 )
         {
-            _rb.velocity = dir * 15f;
+            _rb.velocity = dir * _fast;
         }
     }
 

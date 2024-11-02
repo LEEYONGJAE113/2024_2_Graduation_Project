@@ -8,9 +8,11 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField]
     private int _id;
-    // { 원거리추적무기 }
+    // { 0=원거리추적무기 }
     [SerializeField]
     private int _prefabsId;
+    // { 1=원거리추적무기}
+    public float damage;
     [SerializeField]
     private int _count; // penetr in bullet
     [SerializeField]
@@ -18,13 +20,38 @@ public class Weapon : MonoBehaviour
 
     private float _timer;
 
-    public float damage;
     private Player _player;
 
 
     void Awake()
     {
         _player = GameManager.instance.player;
+    }
+
+    public void Init(WeaponData data)
+    {
+        name = "Weapon " + data.weaponId + " : " + data.weaponName; //object name
+
+        transform.parent = _player.transform;
+        transform.localPosition = Vector3.zero;
+
+        PropertySet(data);
+    }
+    
+    void PropertySet(WeaponData data)
+    {
+        _id = data.weaponId;
+        damage = data.baseDamage;
+        _count = data.baseCount;
+        _cooldown = data.baseCooldown;
+        for (int index = 0; index < GameManager.instance.pool.prefabsCategories.Length; index++)
+        {
+            if (data.projectile == GameManager.instance.pool.prefabsCategories[1].prefabs[index])
+            {
+                _prefabsId = index;
+                break;
+            }
+        }
     }
 
     void Update()
@@ -38,11 +65,6 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public void Init()
-    {
-        transform.parent = _player.transform;
-        transform.localPosition = Vector3.zero;
-    }
 
     void FireBullet()
     {
@@ -53,11 +75,13 @@ public class Weapon : MonoBehaviour
         dir = dir.normalized;
 
         // Get(temp), need item data-prefabId
-        Transform bullet = GameManager.instance.pool.Get(1).transform;
+        Transform bullet = GameManager.instance.pool.Get(1, _prefabsId).transform;
         bullet.position = transform.position;
         bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
         bullet.GetComponent<Bullet>().Init(damage, _count, dir);
         // need getcomponent
     }
+
+    
 
 }

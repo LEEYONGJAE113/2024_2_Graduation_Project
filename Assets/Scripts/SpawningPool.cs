@@ -33,7 +33,7 @@ public class SpawningPool : MonoBehaviour
 
     void Spawn()
     {
-        GameObject enemy = GameManager.instance.pool.Get(0);
+        GameObject enemy = GameManager.instance.pool.Get(0, 0);
         enemy.transform.position = _spawnPoints[Random.Range(1, _spawnPoints.Length)].position;
         enemy.GetComponent<Enemy>().Init();
     }
