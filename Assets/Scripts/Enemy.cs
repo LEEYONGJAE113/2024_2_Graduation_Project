@@ -82,7 +82,7 @@ public class Enemy : MonoBehaviour
         else
         {
             Die(); // 나중에 animation controll로 제어
-            GameManager.instance.kill++;
+            GameManager.instance.inGameKill++;
             // DropExp();
         }
     }

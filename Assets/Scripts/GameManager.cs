@@ -5,19 +5,29 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [Header("# Time Control ")]
+    public bool isTimeGoing;
+    public float gameTime;
+    public float maxGameTime;
 
     [Header("# Objects ")]
     public Player player;
     public PoolManager pool;
     
-    [Header("# Player ")]
-    public float playerCurrentHP;
+    [Header("# Player Stats ")]
     public float playerMaxHP;
-    public float playerEXP;
-    public int playerLevel;
     public float playerMoveSpeed;
-    public int kill;
+    public float playerDamage;
+    public float playerHPRegen;
+    public float playerCooldown;
+    public float playerProjectileSpeed;
+
     
+    [Header("# In Game Data ")]
+    public float inGameCurrentHp;
+    public float inGameExp;
+    public int inGameLevel;
+    public int inGameKill;
 
     void Awake()
     {
@@ -26,6 +36,6 @@ public class GameManager : MonoBehaviour
     
     void GameStart()
     {
-        playerCurrentHP = playerMaxHP;
+        inGameCurrentHp = playerMaxHP;
     }
 }
