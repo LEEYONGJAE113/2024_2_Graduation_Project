@@ -9,15 +9,12 @@ public class Weapon : MonoBehaviour
     /// <summary> <item> <description> 0 = 원거리추적무기, </description> </item> </summary>
     [SerializeField]
     private int _id;
-    
     public float damage;
     [SerializeField]
     private int _count; // penetr in bullet
     [SerializeField]
     private float _cooldown;
-
     private float _timer;
-
     private Player _player;
 
 

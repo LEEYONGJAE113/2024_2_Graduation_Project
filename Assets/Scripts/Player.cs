@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    private bool _isLive;
     private Vector2 _inputVec;
     private Rigidbody2D _rb;
     public Scanner scanner;
@@ -27,14 +28,10 @@ public class Player : MonoBehaviour
         _inputVec = inputValue.Get<Vector2>();
     }
 
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.gameObject.tag == "EXPMarble")
-    //     {
-    //         EXPMarble expmarble = other.gameObject.GetComponent<EXPMarble>();
-    //         Destroy(other.gameObject);
-    //         _playerEXP += expmarble.Exp;
-    //     }
-    // }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("EXPMarble")) { return; }
+        
+    }
 
 }

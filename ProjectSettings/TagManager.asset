@@ -6,7 +6,6 @@ TagManager:
   tags:
   - EXPMarble
   - Enemy
-  - EXPRange
   - Wall
   - Weapon
   - ViewArea

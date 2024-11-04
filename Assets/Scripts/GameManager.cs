@@ -39,4 +39,11 @@ public class GameManager : MonoBehaviour
     {
         inGameCurrentHp = playerMaxHP;
     }
+
+    void Update()
+    {
+        if (!isTimeGoing) { return; }
+        
+        currentGameTime += Time.deltaTime;
+    }
 }

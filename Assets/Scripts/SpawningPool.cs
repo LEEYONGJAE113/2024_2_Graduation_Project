@@ -13,8 +13,6 @@ public class EnemyData
 public class SpawningPool : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] _enemies;
-    [SerializeField]
     private Transform[] _spawnPoints;
     public EnemyData[] enemyDatas;
 
@@ -32,7 +30,7 @@ public class SpawningPool : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > _spawnInterval) // 0 is temp
+        if (timer > _spawnInterval)
         {
             timer = 0;
             Spawn();
