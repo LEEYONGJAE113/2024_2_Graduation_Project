@@ -534,7 +534,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 522901420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610e3e7c099b34745a6a5701b5e24d3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 915921e0c43a44b3b98e642960f908ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!66 &522901423
@@ -4830,7 +4830,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 544753196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610e3e7c099b34745a6a5701b5e24d3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 915921e0c43a44b3b98e642960f908ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!66 &544753199
@@ -9124,7 +9124,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 578928191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610e3e7c099b34745a6a5701b5e24d3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 915921e0c43a44b3b98e642960f908ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!66 &578928194
@@ -13540,14 +13540,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7939f4be1157c4ba7aa6f8b31219bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTimeGoing: 0
+  currentGameTime: 0
+  maxGameTime: 0
   player: {fileID: 1607219421}
   pool: {fileID: 229625707}
-  playerCurrentHP: 0
   playerMaxHP: 100
-  playerEXP: 0
-  playerLevel: 0
   playerMoveSpeed: 3
-  kill: 0
+  playerDamage: 0
+  playerHPRegen: 0
+  playerCooldown: 0
+  playerProjectileSpeed: 0
+  playerGetRangeRad: 0
+  inGameCurrentHp: 0
+  inGameExp: 0
+  inGameLevel: 0
+  inGameKill: 0
 --- !u!4 &1223714587
 Transform:
   m_ObjectHideFlags: 0
@@ -13609,7 +13617,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1253759366}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610e3e7c099b34745a6a5701b5e24d3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 915921e0c43a44b3b98e642960f908ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!66 &1253759369
@@ -18333,7 +18341,7 @@ MonoBehaviour:
   _id: 0
   _prefabsId: 0
   damage: 10
-  _count: 1
+  _count: 0
   _cooldown: 0.5
 --- !u!1 &1607219413
 GameObject:
@@ -19144,10 +19152,10 @@ MonoBehaviour:
   - {fileID: 8047690371064292641, guid: c6618f9ae5d25c64f9718b38be56a9ca, type: 3}
   _spawnPoints: []
   enemyDatas:
-  - spawnTime: 1
-    enemyHealth: 10
+  - enemyHealth: 10
     enemyMoveSpeed: 2
     enemyType: 0
+  _spawnInterval: 2
 --- !u!4 &2014695569
 Transform:
   m_ObjectHideFlags: 0

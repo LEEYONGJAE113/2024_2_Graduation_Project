@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
         Vector2 dir = _player.position - _rb.position;
         Vector2 nextVec = dir.normalized * _moveSpeed * Time.fixedDeltaTime;
         _rb.MovePosition(_rb.position + nextVec);
-        _rb.velocity = Vector2.zero;
+        _rb.velocity = Vector2.zero; // 물리 충돌시 밀리는 현상 방지
     }
 
     void LateUpdate()
@@ -98,7 +98,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Knockback()
     {
-        yield return new WaitForFixedUpdate();
+        yield return _wait;
         if (!_isLive) { yield break; }
         Vector3 dir = transform.position - _player.transform.position;
         _rb.AddForce(dir.normalized * 3f, ForceMode2D.Impulse);

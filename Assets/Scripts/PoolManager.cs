@@ -18,10 +18,6 @@ public class PoolManager : MonoBehaviour
     /// <item> <description> 1 = Weapons, </description> </item>
     /// <item> <description> 2 = Drop Items </description> </item> </summary>
     public PrefabsCategory[] prefabsCategories;
-
-    /// <summary> <item> <description> 0 = Enemy, </description> </item>
-    /// <item> <description> 1 = Weapons, </description> </item>
-    /// <item> <description> 2 = Drop Items </description> </item> </summary>
     private List<GameObject>[][] _pools;
 
     void Awake()

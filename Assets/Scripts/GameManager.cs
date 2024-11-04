@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [Header("# Time Control ")]
     public bool isTimeGoing;
-    public float gameTime;
+    public float currentGameTime;
     public float maxGameTime;
 
     [Header("# Objects ")]
@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public float playerHPRegen;
     public float playerCooldown;
     public float playerProjectileSpeed;
+    public float playerGetRangeRad;
 
     
     [Header("# In Game Data ")]

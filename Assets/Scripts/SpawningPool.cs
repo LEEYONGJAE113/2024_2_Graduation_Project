@@ -1,7 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
+
+[System.Serializable]
+public class EnemyData
+{
+    public float enemyHealth;
+    public float enemyMoveSpeed;
+    public int enemyType; // for enemy sprite
+}
 
 public class SpawningPool : MonoBehaviour
 {
@@ -11,6 +18,8 @@ public class SpawningPool : MonoBehaviour
     private Transform[] _spawnPoints;
     public EnemyData[] enemyDatas;
 
+    [SerializeField]
+    private float _spawnInterval;
 
     private float timer;
 
@@ -23,7 +32,7 @@ public class SpawningPool : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > enemyDatas[0].spawnTime) // 0 is temp
+        if (timer > _spawnInterval) // 0 is temp
         {
             timer = 0;
             Spawn();
@@ -39,11 +48,3 @@ public class SpawningPool : MonoBehaviour
 
 }
 
-[System.Serializable]
-public class EnemyData
-{
-    public float spawnTime;
-    public float enemyHealth;
-    public float enemyMoveSpeed;
-    public int enemyType; // for enemy sprite
-}

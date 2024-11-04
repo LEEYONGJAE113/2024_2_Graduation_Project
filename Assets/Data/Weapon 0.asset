@@ -19,7 +19,7 @@ MonoBehaviour:
   weaponDesc: 
   projectile: {fileID: 1236078097168761548, guid: ec9a809f30395aa4ebfb57b9e2a551e5, type: 3}
   baseDamage: 3
-  cooldown: 0
+  baseCooldown: 0
   baseCount: 0
   damages:
   - 0.35
@@ -33,4 +33,4 @@ MonoBehaviour:
   - 0.5
   - 0.45
   - 0.4
-  counts: 0100000001000000010000000200000002000000
+  counts: 0000000000000000000000000100000001000000

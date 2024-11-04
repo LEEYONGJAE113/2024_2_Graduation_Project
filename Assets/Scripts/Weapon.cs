@@ -6,12 +6,10 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    /// <summary> <item> <description> 0 = 원거리추적무기, </description> </item> </summary>
     [SerializeField]
     private int _id;
-    // { 0=원거리추적무기 }
-    [SerializeField]
-    private int _prefabsId;
-    // { 0=원거리추적무기}
+    
     public float damage;
     [SerializeField]
     private int _count; // penetr in bullet
@@ -44,14 +42,6 @@ public class Weapon : MonoBehaviour
         damage = data.baseDamage;
         _count = data.baseCount;
         _cooldown = data.baseCooldown;
-        for (int index = 0; index < GameManager.instance.pool.prefabsCategories.Length; index++)
-        {
-            if (data.projectile == GameManager.instance.pool.prefabsCategories[1].prefabs[index])
-            {
-                _prefabsId = index;
-                break;
-            }
-        }
     }
 
     void Update()
@@ -74,14 +64,9 @@ public class Weapon : MonoBehaviour
         Vector3 dir = targetPos - transform.position;
         dir = dir.normalized;
 
-        // Get(temp), need item data-prefabId
-        Transform bullet = GameManager.instance.pool.Get(1, _prefabsId).transform;
+        Transform bullet = GameManager.instance.pool.Get(1, _id).transform;
         bullet.position = transform.position;
         bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
         bullet.GetComponent<Bullet>().Init(damage, _count, dir);
-        // need getcomponent
     }
-
-    
-
 }
