@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     // { 0=원거리추적무기 }
     [SerializeField]
     private int _prefabsId;
-    // { 1=원거리추적무기}
+    // { 0=원거리추적무기}
     public float damage;
     [SerializeField]
     private int _count; // penetr in bullet

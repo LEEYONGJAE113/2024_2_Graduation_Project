@@ -61,19 +61,18 @@ public class Enemy : MonoBehaviour
         _spriter.flipX = (_player.position.x < _rb.position.x);
     }
 
-    public void Init()
+    public void Init(EnemyData data)
     {
-        // temp, need data
-        _moveSpeed = 3f;
-        _maxHp = 5f;
-        _currentHp = 5f;
+        _moveSpeed = data.enemyMoveSpeed;
+        _maxHp = data.enemyHealth;
+        _currentHp = data.enemyHealth;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Weapon") || !_isLive) { return; }
 
-        _currentHp -= collision.GetComponent<Weapon>().damage;
+        _currentHp -= collision.GetComponent<Bullet>().damage;
         StartCoroutine(Knockback());
 
         if ( _currentHp > 0 )

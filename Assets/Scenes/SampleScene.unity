@@ -18331,10 +18331,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 0
-  _prefabsId: 1
+  _prefabsId: 0
   damage: 10
   _count: 1
-  _cooldown: 5
+  _cooldown: 0.5
 --- !u!1 &1607219413
 GameObject:
   m_ObjectHideFlags: 0
@@ -18388,7 +18388,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanner: {fileID: 0}
-  weapon: {fileID: 0}
 --- !u!114 &1607219422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19144,7 +19143,11 @@ MonoBehaviour:
   _enemies:
   - {fileID: 8047690371064292641, guid: c6618f9ae5d25c64f9718b38be56a9ca, type: 3}
   _spawnPoints: []
-  _spawnInterval: 5
+  enemyDatas:
+  - spawnTime: 1
+    enemyHealth: 10
+    enemyMoveSpeed: 2
+    enemyType: 0
 --- !u!4 &2014695569
 Transform:
   m_ObjectHideFlags: 0

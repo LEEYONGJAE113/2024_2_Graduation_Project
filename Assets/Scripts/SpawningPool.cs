@@ -9,9 +9,8 @@ public class SpawningPool : MonoBehaviour
     private GameObject[] _enemies;
     [SerializeField]
     private Transform[] _spawnPoints;
+    public EnemyData[] enemyDatas;
 
-    [SerializeField]
-    private float _spawnInterval = 5f;
 
     private float timer;
 
@@ -24,7 +23,7 @@ public class SpawningPool : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > _spawnInterval)
+        if (timer > enemyDatas[0].spawnTime) // 0 is temp
         {
             timer = 0;
             Spawn();
@@ -35,7 +34,16 @@ public class SpawningPool : MonoBehaviour
     {
         GameObject enemy = GameManager.instance.pool.Get(0, 0);
         enemy.transform.position = _spawnPoints[Random.Range(1, _spawnPoints.Length)].position;
-        enemy.GetComponent<Enemy>().Init();
+        enemy.GetComponent<Enemy>().Init(enemyDatas[0]); // 0 is temp
     }
 
+}
+
+[System.Serializable]
+public class EnemyData
+{
+    public float spawnTime;
+    public float enemyHealth;
+    public float enemyMoveSpeed;
+    public int enemyType; // for enemy sprite
 }
