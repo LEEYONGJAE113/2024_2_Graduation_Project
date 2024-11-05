@@ -584,24 +584,12 @@ CompositeCollider2D:
         Y: -100000000
       - X: 100000000
         Y: -100000000
-    - - X: 0
-        Y: 0
-      - X: 0
-        Y: 10000000
-      - X: 10000000
-        Y: 10000000
-      - X: 10000000
-        Y: 0
   m_CompositePaths:
     m_Paths:
     - - {x: 9.99997, y: -10}
       - {x: 9.99997, y: 10}
       - {x: -10, y: 9.99997}
       - {x: -9.99997, y: -10}
-    - - {x: 1, y: 0.0000294}
-      - {x: 0, y: 0.0000294}
-      - {x: 0.0000294, y: 1}
-      - {x: 1, y: 0.9999706}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -2827,6 +2815,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
+  - first: {x: 0, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741826
   - first: {x: 1, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -4721,7 +4719,7 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 399
+  - m_RefCount: 400
     m_Data: {fileID: 11400000, guid: a49d7808239b43b4e94e98b6866bd376, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -4736,10 +4734,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 399
+  - m_RefCount: 400
     m_Data: {fileID: 21300000, guid: 64f6367b8b00556448133a4dd20e3583, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 399
+  - m_RefCount: 400
     m_Data:
       e00: 1
       e01: 0
@@ -4758,7 +4756,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 399
+  - m_RefCount: 400
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -13540,7 +13538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7939f4be1157c4ba7aa6f8b31219bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTimeGoing: 0
+  isTimeGoing: 1
   currentGameTime: 0
   maxGameTime: 0
   player: {fileID: 1607219421}
@@ -19072,7 +19070,7 @@ MonoBehaviour:
   - enemyHealth: 10
     enemyMoveSpeed: 2
     enemyType: 0
-  _spawnInterval: 5
+  _spawnInterval: 1
 --- !u!4 &2014695569
 Transform:
   m_ObjectHideFlags: 0

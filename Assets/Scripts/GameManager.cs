@@ -35,9 +35,10 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
     
-    void GameStart()
+    public void GameStart()
     {
         inGameCurrentHp = playerMaxHP;
+        Resume();
     }
 
     void Update()
@@ -45,5 +46,11 @@ public class GameManager : MonoBehaviour
         if (!isTimeGoing) { return; }
         
         currentGameTime += Time.deltaTime;
+    }
+
+    public void Resume()
+    {
+        isTimeGoing = true;
+        Time.timeScale = 1;
     }
 }

@@ -5,18 +5,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private bool _isLive;
     [SerializeField]
     private float _currentHp;
     [SerializeField]
     private float _maxHp;
-
     [SerializeField]
     private float _moveSpeed;
-
+    public RuntimeAnimatorController[] animCon;
     [SerializeField]
     private Rigidbody2D _player;
-    
+
+    private bool _isLive;
     private Animator _anim;
     private Collider2D _coll;
     private Rigidbody2D _rb;
@@ -42,11 +41,13 @@ public class Enemy : MonoBehaviour
         _coll.enabled = true;
         _rb.simulated = true;
         _spriter.sortingOrder = 2;
+        _anim.SetBool("Dead", false);
         _currentHp = _maxHp;
     }
 
     void FixedUpdate()
     {
+        if (!GameManager.instance.isTimeGoing) { return; }
         if (!_isLive || _anim.GetCurrentAnimatorStateInfo(0).IsName("Hit")) { return; }
         Vector2 dir = _player.position - _rb.position;
         Vector2 nextVec = dir.normalized * _moveSpeed * Time.fixedDeltaTime;
@@ -56,12 +57,14 @@ public class Enemy : MonoBehaviour
 
     void LateUpdate()
     {
+        if (!GameManager.instance.isTimeGoing) { return; }
         if (!_isLive) { return; }
         _spriter.flipX = (_player.position.x < _rb.position.x);
     }
 
     public void Init(EnemyData data)
     {
+        _anim.runtimeAnimatorController = animCon[data.enemyType];
         _moveSpeed = data.enemyMoveSpeed;
         _maxHp = data.enemyHealth;
         _currentHp = data.enemyHealth;
@@ -80,7 +83,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Die(); // 나중에 animation controll로 제어
+            Die();
             GameManager.instance.inGameKill++;
             // DropExp();
         }
@@ -92,15 +95,20 @@ public class Enemy : MonoBehaviour
         _coll.enabled = false;
         _rb.simulated = false;
         _spriter.sortingOrder = 1;
-        gameObject.SetActive(false);
+        _anim.SetBool("Dead", true);
     }
 
     IEnumerator Knockback()
     {
         yield return _wait;
         if (!_isLive) { yield break; }
-        Vector3 dir = transform.position - _player.transform.position;
+        Vector3 dir = transform.position - GameManager.instance.player.transform.position;
         _rb.AddForce(dir.normalized * 3f, ForceMode2D.Impulse);
+    }
+    
+    void Dead()
+    {
+        gameObject.SetActive(false);
     }
 
     // void DropExp()
