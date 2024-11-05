@@ -194,8 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fc52195f3424fca9aace68114bc0a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHp: 5
-  _maxHp: 5
+  _currentHp: 0
+  _maxHp: 0
   _moveSpeed: 3
   animCon:
   - {fileID: 9100000, guid: c47433b88d0d8ce428bf04362d75c436, type: 2}

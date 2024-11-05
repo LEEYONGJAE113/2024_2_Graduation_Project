@@ -18095,8 +18095,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 18
-  m_RefResolutionX: 300
-  m_RefResolutionY: 300
+  m_RefResolutionX: 240
+  m_RefResolutionY: 240
   m_UpscaleRT: 0
   m_PixelSnapping: 0
   m_CropFrameX: 0
@@ -18328,7 +18328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 0
-  damage: 10
+  damage: 3
   _count: 0
   _cooldown: 0.5
 --- !u!1 &1607219413

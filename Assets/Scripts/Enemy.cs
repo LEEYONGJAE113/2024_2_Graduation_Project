@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour
         yield return _wait;
         if (!_isLive) { yield break; }
         Vector3 dir = transform.position - GameManager.instance.player.transform.position;
-        _rb.AddForce(dir.normalized * 3f, ForceMode2D.Impulse);
+        _rb.AddForce(dir.normalized * 1.1f, ForceMode2D.Impulse);
     }
     
     void Dead()
