@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("EXPMarble")) { return; }
-        
+        EXPMarble expMarble = collision.GetComponent<EXPMarble>();
     }
 
 }

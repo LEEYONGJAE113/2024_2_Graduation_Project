@@ -18328,7 +18328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 0
-  damage: 3
+  damage: 0.5
   _count: 3
   _cooldown: 0.5
 --- !u!1 &1607219413
