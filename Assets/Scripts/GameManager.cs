@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,13 +27,12 @@ public class GameManager : MonoBehaviour
     
     [Header("# In Game Data ")]
     public float inGameCurrentHp;
-    public float inGameExp;
     public int inGameLevel;
     public int inGameKill;
 
     void Awake()
     {
-        instance = this;
+        if (instance == null) { instance = this; }
     }
     
     public void GameStart()
@@ -53,4 +53,5 @@ public class GameManager : MonoBehaviour
         isTimeGoing = true;
         Time.timeScale = 1;
     }
+
 }
