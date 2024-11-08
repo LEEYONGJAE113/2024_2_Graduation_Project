@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
         Vector2 dir = _player.position - _rb.position;
         Vector2 nextVec = dir.normalized * _moveSpeed * Time.fixedDeltaTime;
         _rb.MovePosition(_rb.position + nextVec);
-        _rb.velocity = Vector2.zero; // 물리 충돌시 밀리는 현상 방지
+        _rb.velocity = Vector2.zero;
     }
 
     void LateUpdate()
@@ -80,7 +80,6 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            // DropExp();
             Die();
             GameManager.instance.inGameKill++;
         }
@@ -97,8 +96,8 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Knockback()
     {
-        yield return _wait;
         if (!_isLive) { yield break; }
+        yield return _wait;
         Vector3 dir = transform.position - GameManager.instance.player.transform.position;
         _rb.AddForce(dir.normalized * 1.1f, ForceMode2D.Impulse);
     }
