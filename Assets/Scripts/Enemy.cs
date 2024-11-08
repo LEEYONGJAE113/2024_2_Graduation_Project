@@ -17,18 +17,15 @@ public class Enemy : MonoBehaviour
 
     private bool _isLive;
     private Animator _anim;
-    private Collider2D _coll;
+    private Collider2D _collider;
     private Rigidbody2D _rb;
     private SpriteRenderer _spriter;
     private WaitForFixedUpdate _wait;
 
-    // private GameObject[] _expMarbles;
-    private GameObject _expMarble;
-
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _coll = GetComponent<Collider2D>();
+        _collider = GetComponent<Collider2D>();
         _anim = GetComponent<Animator>();
         _spriter = GetComponent<SpriteRenderer>();
         _wait = new WaitForFixedUpdate();
@@ -38,7 +35,7 @@ public class Enemy : MonoBehaviour
     {
         _player = GameManager.instance.player.GetComponent<Rigidbody2D>();
         _isLive = true;
-        _coll.enabled = true;
+        _collider.enabled = true;
         _rb.simulated = true;
         _spriter.sortingOrder = 2;
         _anim.SetBool("Dead", false);
@@ -83,16 +80,16 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            // DropExp();
             Die();
             GameManager.instance.inGameKill++;
-            // DropExp();
         }
     }
 
     void Die()
     {
         _isLive = false;
-        _coll.enabled = false;
+        _collider.enabled = false;
         _rb.simulated = false;
         _spriter.sortingOrder = 1;
         _anim.SetBool("Dead", true);
@@ -110,9 +107,4 @@ public class Enemy : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
-    // void DropExp()
-    // {
-    //     _expMarble.GetComponent<EXPMarble>().Init();
-    // }
 }

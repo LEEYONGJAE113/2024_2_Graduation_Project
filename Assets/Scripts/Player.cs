@@ -28,10 +28,5 @@ public class Player : MonoBehaviour
         _inputVec = inputValue.Get<Vector2>();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!collision.CompareTag("EXPMarble")) { return; }
-        EXPMarble expMarble = collision.GetComponent<EXPMarble>();
-    }
 
 }
