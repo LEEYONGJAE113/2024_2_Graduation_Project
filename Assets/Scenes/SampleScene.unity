@@ -18283,6 +18283,7 @@ GameObject:
   - component: {fileID: 1607219425}
   - component: {fileID: 1607219424}
   - component: {fileID: 1607219423}
+  - component: {fileID: 1607219427}
   - component: {fileID: 1607219422}
   - component: {fileID: 1607219421}
   - component: {fileID: 1607219426}
@@ -18495,6 +18496,41 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   nearestTarget: {fileID: 0}
+--- !u!58 &1607219427
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607219413}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1616446027
 GameObject:
   m_ObjectHideFlags: 0
@@ -19102,8 +19138,4 @@ SceneRoots:
   - {fileID: 1564301562}
   - {fileID: 262172245}
   - {fileID: 1900265730}
-<<<<<<< HEAD
-  - {fileID: 1563206194}
   - {fileID: 1617924076}
-=======
->>>>>>> 1145e107b64d536d06868f813178a1d976e7247a
