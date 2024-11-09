@@ -14,7 +14,12 @@
 Unity (C#)
 ### 간단한 소개
 UI 구상도 <br>
-<img width="1202" alt="스크린샷 2024-10-01 오후 4 29 59" src="https://github.com/user-attachments/assets/0f8c59ea-5875-4c67-8733-72a063c8334c"><br>
+![image](https://github.com/user-attachments/assets/45baa3f5-ca68-4df0-9e17-6adddd95de50)<br>
+
+<details>
+  <summary> 초기 구상 </summary>
+  <img width="1202" alt="스크린샷 2024-10-01 오후 4 29 59" src="https://github.com/user-attachments/assets/0f8c59ea-5875-4c67-8733-72a063c8334c"><br>
+</details>
 사운드, 그래픽 제외 전부 Unity로 구현
 
 ## ⚙️ 시스템 구성도
