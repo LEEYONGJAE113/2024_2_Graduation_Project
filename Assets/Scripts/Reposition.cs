@@ -42,11 +42,11 @@ public class Reposition : MonoBehaviour
 
         if ( gapX > gapY )
         {
-            transform.Translate(Vector3.right * dirX * 40);
+            transform.Translate(Vector3.right * dirX * 100);
         }
         else if ( gapX < gapY )
         {
-            transform.Translate(Vector3.up * dirY * 40);
+            transform.Translate(Vector3.up * dirY * 100);
         }
     }
 
