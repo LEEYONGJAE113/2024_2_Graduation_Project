@@ -99,7 +99,7 @@ public class Enemy : MonoBehaviour
         if (!_isLive) { yield break; }
         yield return _wait;
         Vector3 dir = transform.position - GameManager.instance.player.transform.position;
-        _rb.AddForce(dir.normalized * 5, ForceMode2D.Impulse);
+        _rb.AddForce(dir.normalized * 1.5f, ForceMode2D.Impulse);
     }
     
     void Dead()

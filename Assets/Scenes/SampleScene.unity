@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 152733401}
   - component: {fileID: 152733400}
   - component: {fileID: 152733399}
+  - component: {fileID: 152733402}
   m_Layer: 0
   m_Name: Tilemap 0
   m_TagString: Background
@@ -25484,6 +25485,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &152733402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152733395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915921e0c43a44b3b98e642960f908ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &229625706
 GameObject:
   m_ObjectHideFlags: 0
@@ -25707,6 +25720,7 @@ GameObject:
   - component: {fileID: 319233462}
   - component: {fileID: 319233461}
   - component: {fileID: 319233460}
+  - component: {fileID: 319233465}
   m_Layer: 0
   m_Name: Tilemap 1
   m_TagString: Background
@@ -50960,6 +50974,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &319233465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319233458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915921e0c43a44b3b98e642960f908ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &331398128
 GameObject:
   m_ObjectHideFlags: 0
@@ -51084,6 +51110,7 @@ GameObject:
   - component: {fileID: 589337331}
   - component: {fileID: 589337330}
   - component: {fileID: 589337329}
+  - component: {fileID: 589337334}
   m_Layer: 0
   m_Name: Tilemap 3
   m_TagString: Background
@@ -76337,6 +76364,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &589337334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589337327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915921e0c43a44b3b98e642960f908ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &620797111
 GameObject:
   m_ObjectHideFlags: 0
@@ -76351,6 +76390,7 @@ GameObject:
   - component: {fileID: 620797115}
   - component: {fileID: 620797114}
   - component: {fileID: 620797113}
+  - component: {fileID: 620797118}
   m_Layer: 0
   m_Name: Tilemap 2
   m_TagString: Background
@@ -101604,6 +101644,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &620797118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620797111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915921e0c43a44b3b98e642960f908ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &860831802
 GameObject:
   m_ObjectHideFlags: 0
@@ -102034,8 +102086,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 18
-  m_RefResolutionX: 500
-  m_RefResolutionY: 500
+  m_RefResolutionX: 800
+  m_RefResolutionY: 800
   m_UpscaleRT: 0
   m_PixelSnapping: 0
   m_CropFrameX: 0
@@ -102197,7 +102249,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1053302126}
   - {fileID: 2014695569}
@@ -102383,7 +102435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca32ea4be16624ee89a92ae8d75290b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scanRange: 5
+  _scanRange: 20
   _targetLayer:
     serializedVersion: 2
     m_Bits: 64

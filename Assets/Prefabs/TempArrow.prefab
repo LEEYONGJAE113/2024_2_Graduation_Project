@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7437206469010599701}
   - component: {fileID: 28077689101043360}
   - component: {fileID: 4145327706149571639}
-  - component: {fileID: 7230780104373198940}
+  - component: {fileID: 8960973744102208852}
   - component: {fileID: 5435257519556825385}
   m_Layer: 0
   m_Name: TempArrow
@@ -114,8 +114,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &7230780104373198940
-CapsuleCollider2D:
+--- !u!58 &8960973744102208852
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -146,9 +146,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.33333334, y: 0.6666667}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0.17}
+  serializedVersion: 2
+  m_Radius: 0.17
 --- !u!114 &5435257519556825385
 MonoBehaviour:
   m_ObjectHideFlags: 0
