@@ -82,6 +82,7 @@ public class Enemy : MonoBehaviour
         {
             Die();
             GameManager.instance.inGameKill++;
+            GameManager.instance.LevelUpTemp();
         }
     }
 

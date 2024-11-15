@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public float inGameCurrentHp;
     public int inGameLevel;
     public int inGameKill;
+    public int[] QuestKilltemp = { 2, 10, 20, 30, 40, 50 };
 
     void Awake()
     {
@@ -52,6 +53,16 @@ public class GameManager : MonoBehaviour
     {
         isTimeGoing = true;
         Time.timeScale = 1;
+    }
+
+    public void LevelUpTemp()
+    {
+        if (!isTimeGoing) { return; }
+
+        if (inGameKill == QuestKilltemp[Mathf.Min(inGameLevel, QuestKilltemp.Length-1)])
+        {
+            inGameLevel++;
+        }
     }
 
 }
