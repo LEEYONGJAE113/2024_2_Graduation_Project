@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     private int _id;
     public float damage;
     [SerializeField]
-    private int _count; // penetr in bullet
+    private int _count; // penetr in bullet(0)
     [SerializeField]
     private float _cooldown;
     private float _timer;

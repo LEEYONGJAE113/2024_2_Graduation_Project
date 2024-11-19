@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class ItemBox : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject[] _items;
+    private DropItemData[] _datas;
+    private bool _isBox;
+    private Collider2D _collider;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Awake()
     {
-        if (collision.CompareTag("Weapon"))
+        _collider = GetComponent<Collider2D>();
+    }
+
+
+    void OnEnable()
+    {
+        _isBox = true;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Weapon") && _isBox)
         {
-            Destroy(gameObject);
-            // Instantiate(_items[index], transform.position, Quaternion.identity);
+            _isBox = false;
+        }
+        if (collision.CompareTag("Player") && !_isBox)
+        {
+            Debug.Log("Wow");
         }
     }
+
 }   
