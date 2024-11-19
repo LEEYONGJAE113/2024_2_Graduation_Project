@@ -19,7 +19,13 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 nextVec = _inputVec * GameManager.instance.playerMoveSpeed * Time.fixedDeltaTime;
-        _rb.MovePosition(_rb.position + nextVec);
+        Vector2 nextPos = _rb.position + nextVec;
+        if (GameManager.instance.questManager.currentQuest == QuestManager.Quests.Move)
+        {
+            float distance = Vector2.Distance(_rb.position, nextPos);
+            GameManager.instance.questManager.questProgress += distance;
+        }
+        _rb.MovePosition(nextPos);
         _rb.velocity = Vector2.zero;
     }
 

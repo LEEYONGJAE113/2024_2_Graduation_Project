@@ -5,33 +5,46 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-    public enum Quests { Kill, Box, Move, Survive };
+    public enum Quests { Kill, Move, Box, Survive };
     public Quests currentQuest;
-    private Quests[] _questList;
-
+    public float questProgress;
+    public float questGoal;
+    public Quests[] questList;
+    
     void Awake()
     {
-        _questList = (Quests[])Enum.GetValues(typeof(Quests));
+        questList = (Quests[])Enum.GetValues(typeof(Quests));
     }
-    void GetQuest(int level)
+
+    void Update()
     {
-        int randomIndex = UnityEngine.Random.Range(0, _questList.Length);
-        currentQuest = _questList[randomIndex];
+        if (questProgress >= questGoal)
+        {
+            GameManager.instance.LevelUp();
+        }
+    }
+
+    public void GetQuest(int level)
+    {
+        int randomIndex = UnityEngine.Random.Range(3, 4);
+        currentQuest = questList[randomIndex];
+        questProgress = 0f;
 
         switch (currentQuest)
         {
             case Quests.Kill:
-                int currentKills = GameManager.instance.inGameKill;
-                
+                questGoal = level * 5;
                 break;
             case Quests.Box:
+                questGoal = level;
                 break;
             case Quests.Move:
+                questGoal = 20 + (level * Mathf.Sqrt(level));
+                // playerMoveSpeed per second
                 break;
             case Quests.Survive:
+                questGoal = (level * 3) + 7;
                 break;
         }
-
     }
-
 }

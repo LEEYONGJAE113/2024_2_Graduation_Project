@@ -82,7 +82,10 @@ public class Enemy : MonoBehaviour
         {
             Die();
             GameManager.instance.inGameKill++;
-            GameManager.instance.LevelUpTemp();
+            if (GameManager.instance.questManager.currentQuest == QuestManager.Quests.Kill)
+            {
+                GameManager.instance.questManager.questProgress++;
+            }
         }
     }
 

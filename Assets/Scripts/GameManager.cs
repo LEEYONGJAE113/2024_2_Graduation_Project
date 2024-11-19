@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [Header("# Objects ")]
     public Player player;
     public PoolManager pool;
+    public QuestManager questManager;
     
     [Header("# Player Stats ")]
     public float playerMaxHP;
@@ -29,7 +30,6 @@ public class GameManager : MonoBehaviour
     public float inGameCurrentHp;
     public int inGameLevel;
     public int inGameKill;
-    public int[] QuestKilltemp = { 2, 10, 20, 30, 40, 50 };
 
     void Awake()
     {
@@ -47,6 +47,10 @@ public class GameManager : MonoBehaviour
     {
         if (!isTimeGoing) { return; }
         currentGameTime += Time.deltaTime;
+        if (questManager.currentQuest == QuestManager.Quests.Survive)
+        {
+            questManager.questProgress += Time.deltaTime;
+        }
     }
 
     public void Resume()
@@ -55,16 +59,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void LevelUpTemp()
+
+    public void LevelUp()
     {
-        if (!isTimeGoing) { return; }
-
-        if (inGameKill == QuestKilltemp[Mathf.Min(inGameLevel, QuestKilltemp.Length-1)])
-        {
-            inGameLevel++;
-        }
+        questManager.GetQuest(++inGameLevel);
     }
-
-
 
 }

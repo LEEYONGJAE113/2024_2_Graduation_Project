@@ -19,6 +19,27 @@ public class HUD : MonoBehaviour
         _text = GetComponent<Text>();
         _slider = GetComponent<Slider>();
     }
+
+    string GetQuestName()
+    {
+        string name = null;
+        switch (GameManager.instance.questManager.currentQuest)
+        {
+            case QuestManager.Quests.Kill:
+                name = "디버깅하기";
+                break;
+            case QuestManager.Quests.Box:
+                name = "박스치우기";
+                break;
+            case QuestManager.Quests.Move:
+                name = "산책하기";
+                break;
+            case QuestManager.Quests.Survive:
+                name = "살아남기";
+                break;
+        }
+        return name;
+    }
     
     void LateUpdate()
     {
@@ -27,9 +48,9 @@ public class HUD : MonoBehaviour
             case InfoType.Quest:
                 // _text.text = "// TODO LIST\n// ";
                 _text.text = string.Format("// TODO LIST\n// {0}\n// {1:F0} / {2:F0}", 
-                "QuestNameTemp", 
-                GameManager.instance.inGameKill, 
-                GameManager.instance.QuestKilltemp[GameManager.instance.inGameLevel]);
+                GetQuestName(), 
+                GameManager.instance.questManager.questProgress, 
+                GameManager.instance.questManager.questGoal);
                 break;
             case InfoType.Level:
                 _text.text = _levelText + string.Format("= {0:F0};", GameManager.instance.inGameLevel);
