@@ -39,13 +39,13 @@ public class GameManager : MonoBehaviour
     public void GameStart()
     {
         inGameCurrentHp = playerMaxHP;
+
         Resume();
     }
 
     void Update()
     {
         if (!isTimeGoing) { return; }
-        
         currentGameTime += Time.deltaTime;
     }
 
@@ -64,5 +64,7 @@ public class GameManager : MonoBehaviour
             inGameLevel++;
         }
     }
+
+
 
 }
