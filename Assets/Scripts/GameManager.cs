@@ -27,9 +27,16 @@ public class GameManager : MonoBehaviour
 
     
     [Header("# In Game Data ")]
-    public float inGameCurrentHp;
+    [SerializeField]
+    private float _inGameCurrentHp;
+    public float inGameCurrentHp
+    {
+        get => _inGameCurrentHp;
+        set => _inGameCurrentHp = Mathf.Clamp(value, 0, playerMaxHP);
+    }
     public int inGameLevel;
     public int inGameKill;
+    public int inGameGold;
 
     void Awake()
     {

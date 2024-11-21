@@ -18,17 +18,18 @@ public class QuestManager : MonoBehaviour
 
     void Update()
     {
-        if (questProgress >= questGoal)
+        if (questProgress >= questGoal && GameManager.instance.isTimeGoing)
         {
             GameManager.instance.LevelUp();
+            questProgress = 0f;
         }
     }
 
     public void GetQuest(int level)
     {
         int randomIndex = UnityEngine.Random.Range(3, 4);
+        // int randomIndex = UnityEngine.Random.Range(0, questList.Length);
         currentQuest = questList[randomIndex];
-        questProgress = 0f;
 
         switch (currentQuest)
         {

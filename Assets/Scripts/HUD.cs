@@ -59,7 +59,7 @@ public class HUD : MonoBehaviour
                 _text.text = string.Format("{0:F0}", GameManager.instance.inGameKill);
                 break;
             case InfoType.Gold:
-                // _text.text = string.Format("{0:F0}", GameManager.instance.gold);
+                _text.text = string.Format("{0:F0}", GameManager.instance.inGameGold);
                 break;
             case InfoType.Time:
                 int min = Mathf.FloorToInt(GameManager.instance.currentGameTime / 60);

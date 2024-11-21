@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    private bool _isLive;
+    public bool playerLive;
     private Vector2 _inputVec;
     private Rigidbody2D _rb;
     public Scanner scanner;
