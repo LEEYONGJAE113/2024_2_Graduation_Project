@@ -426,7 +426,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 648d93cdf2da2a140be5c0e0d9d436cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102703,9 +102703,10 @@ MonoBehaviour:
   playerCooldown: 0
   playerProjectileSpeed: 0
   playerGetRangeRad: 0
-  inGameCurrentHp: 0
+  _inGameCurrentHp: 0
   inGameLevel: 0
   inGameKill: 0
+  inGameGold: 0
 --- !u!4 &1223714587
 Transform:
   m_ObjectHideFlags: 0
@@ -103367,6 +103368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3722ca55f02d4905b2ddd24178b7ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLive: 0
   scanner: {fileID: 0}
 --- !u!114 &1607219422
 MonoBehaviour:
