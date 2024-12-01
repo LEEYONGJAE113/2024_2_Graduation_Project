@@ -19,7 +19,6 @@ public class DropItems : MonoBehaviour
     public void Init(DropItemData data)
     {
         _itemData = data;
-        transform.SetParent(null);
     }
 
     void OnTriggerEnter2D(Collider2D collider)
