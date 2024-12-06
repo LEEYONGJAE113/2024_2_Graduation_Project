@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    /// <summary> <item> <description> 0 = 원거리추적무기, </description> </item> </summary>
+    /// <summary> <item> <description> 0 = 원거리추적무기, 1 = 드롭아이템메테오 </description> </item> </summary>
     [SerializeField]
     private int _id;
     public float damage;
@@ -44,12 +44,17 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime;
-
-        if (_timer > _cooldown)
+        switch(_id)
         {
-            _timer = 0f;
-            FireBullet();
+            case 0:
+                if (_timer > _cooldown)
+                {
+                    _timer = 0f;
+                    FireBullet();
+                }
+                break;
         }
+        
     }
 
 
@@ -66,4 +71,5 @@ public class Weapon : MonoBehaviour
         bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
         bullet.GetComponent<Bullet>().Init(damage, _count, dir);
     }
+
 }

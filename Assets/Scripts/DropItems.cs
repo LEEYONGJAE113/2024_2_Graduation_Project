@@ -40,8 +40,12 @@ public class DropItems : MonoBehaviour
                 GameManager.instance.LevelUp();
                 break;
             case DropItemData.DropItemType.SuperMode:
+                GameManager.instance.player.StartSuperMode(8f); // temp
                 break;
             case DropItemData.DropItemType.Meteor:
+                Transform meteor = GameManager.instance.pool.Get(1, 1).transform;
+                meteor.position = transform.position;
+                meteor.GetComponent<Meteor>().Init(100);
                 break;
             case DropItemData.DropItemType.Gold:
                 GameManager.instance.inGameGold += 50; // temp

@@ -103369,6 +103369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLive: 0
+  superMode: 0
   scanner: {fileID: 0}
 --- !u!114 &1607219422
 MonoBehaviour:
