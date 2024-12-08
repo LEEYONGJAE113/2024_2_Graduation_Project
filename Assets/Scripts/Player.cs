@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public bool playerLive;
     public bool superMode;
     private float _superTime;
-    private Vector2 _inputVec;
+    public Vector2 inputVec;
     private Rigidbody2D _rb;
     public Scanner scanner;
 
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 nextVec = _inputVec * GameManager.instance.playerMoveSpeed * Time.fixedDeltaTime;
+        Vector2 nextVec = inputVec * GameManager.instance.playerMoveSpeed * Time.fixedDeltaTime;
         Vector2 nextPos = _rb.position + nextVec;
         if (GameManager.instance.questManager.currentQuest == QuestManager.Quests.Move)
         {
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 
     void OnMove(InputValue inputValue)
     {
-        _inputVec = inputValue.Get<Vector2>();
+        inputVec = inputValue.Get<Vector2>();
     }
 
     // void OnCollisionStay2D(Collision2D collision)

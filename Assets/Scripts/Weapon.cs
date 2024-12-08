@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
-    /// <summary> <item> <description> 0 = 원거리추적무기, 1 = 드롭아이템메테오 </description> </item> </summary>
+    /// <summary> <item> <description> 
+    /// 0 = 원거리추적무기, 1 = 드롭아이템메테오, 2 = 가비지트럭 
+    /// </description> </item> </summary>
     [SerializeField]
     private int _id;
     public float damage;
@@ -41,6 +44,13 @@ public class Weapon : MonoBehaviour
         _cooldown = data.baseCooldown;
     }
 
+    public void LevelUp(float damage, int count)
+    {
+        this.damage = damage;
+        _count += count;
+    }
+
+
     void Update()
     {
         _timer += Time.deltaTime;
@@ -70,6 +80,21 @@ public class Weapon : MonoBehaviour
         bullet.position = transform.position;
         bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
         bullet.GetComponent<Bullet>().Init(damage, _count, dir);
+    }
+
+    void CallTruck()
+    {
+        Transform truck = GameManager.instance.pool.Get(1, _id).transform;
+        Vector3 playerPos = _player.transform.position;
+        float truckX = playerPos.x + UnityEngine.Random.Range(-50, 50);
+        float truckY = playerPos.y + UnityEngine.Random.Range(-50, 50);
+        
+        Vector3 dir = playerPos - transform.position;
+        dir = dir.normalized;
+        
+        truck.position = new Vector3(truckX, truckY, playerPos.z);
+        truck.rotation = Quaternion.FromToRotation(Vector3.right, dir);
+        truck.GetComponent<GCTruck>().Init(damage, _count, dir);
     }
 
 }

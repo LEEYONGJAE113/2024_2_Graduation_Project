@@ -72,4 +72,11 @@ public class GameManager : MonoBehaviour
         questManager.GetQuest(++inGameLevel);
     }
 
+    public void Stop()
+    {
+        isTimeGoing = false;
+        Time.timeScale = 0;
+        player.inputVec = Vector2.zero; // 밀림방지
+    }
+
 }

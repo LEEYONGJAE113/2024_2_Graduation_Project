@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Weapon", menuName = "Scriptable Object/WeaponData")]
 public class WeaponData : ScriptableObject
 {
-    public enum WeaponType { Bullet, Meteor }
+    public enum WeaponType { Bullet, Meteor, GCTruck }
 
     [Header("# Info")]
     public WeaponType weaponType;
