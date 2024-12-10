@@ -78,7 +78,7 @@ public class Weapon : MonoBehaviour
 
         Transform bullet = GameManager.instance.pool.Get(1, _id).transform;
         bullet.position = transform.position;
-        bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
+        bullet.rotation = Quaternion.FromToRotation(Vector3.right, dir);
         bullet.GetComponent<Bullet>().Init(damage, _count, dir);
     }
 
