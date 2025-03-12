@@ -18,6 +18,8 @@ public class SpawningPool : MonoBehaviour
 
     [SerializeField]
     private float _spawnInterval;
+    [SerializeField]
+    private float _boxSpawnInterval;
 
     private float timer;
 
